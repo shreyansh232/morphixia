@@ -38,7 +38,7 @@ type TransformationParameters {
   upscale         Boolean?
 }
 
-model Job {
+model Video {
   id                      String                  @id @default(auto()) @map("_id") @db.ObjectId
   userId                  String
   sourceVideoUrl          String
