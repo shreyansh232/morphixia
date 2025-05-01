@@ -22,30 +22,35 @@ model User {
   videos    Video[]
 }
 
-model Video {
-  id              String   @id @default(auto()) @map("_id") @db.ObjectId
-  userId          String   @db.ObjectId
-  user            User     @relation(fields: [userId], references: [id])
-  sourceVideoUrl  String
-  sourceVideoName String
-  outputVideoUrl  String?
-  status         VideoStatus @default(PENDING)
-  createdAt      DateTime    @default(now())
-  updatedAt      DateTime    @updatedAt
-  parameters     TransformationParameters?
+enum JobStatus {
+  PENDING     @map("pending")
+  PROCESSING  @map("processing")
+  COMPLETED   @map("completed")
+  FAILED      @map("failed")
 }
 
 type TransformationParameters {
-  // Add specific parameters based on Hunyuan-Video Model API
-  style          String?
-  quality        String?
-  resolution     String?
-  customOptions  Json?
+  prompt          String
+  negativePrompt  String?
+  strength        Float?
+  steps           Int?
+  seed            Int?
+  upscale         Boolean?
 }
 
-enum VideoStatus {
-  PENDING
-  PROCESSING
-  COMPLETED
-  FAILED
+model Job {
+  id                      String                  @id @default(auto()) @map("_id") @db.ObjectId
+  userId                  String
+  sourceVideoUrl          String
+  originalFileName        String?
+  transformationParameters TransformationParameters
+  falRequestId            String                  @unique
+  status                  JobStatus               @default(PENDING)
+  transformedVideoUrl     String?
+  errorMessage           String?
+  createdAt              DateTime                @default(now())
+  updatedAt              DateTime                @updatedAt
+
+  @@index([userId])
+  @@index([status])
 }
