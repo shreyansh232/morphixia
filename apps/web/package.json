@@ -13,6 +13,9 @@
   "dependencies": {
     "@clerk/nextjs": "^6.18.1",
     "@fal-ai/client": "^1.4.0",
+    "@radix-ui/react-collapsible": "^1.1.8",
+    "@radix-ui/react-select": "^2.2.2",
+    "@radix-ui/react-slot": "^1.2.0",
     "@repo/ui": "workspace:*",
     "@tailwindcss/postcss": "^4.1.5",
     "@tanstack/react-query": "^5.74.11",
