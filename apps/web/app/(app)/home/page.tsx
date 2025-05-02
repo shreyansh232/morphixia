@@ -2,28 +2,17 @@
 
 import { useState } from "react";
 import { Upload, ChevronDown, Video } from "lucide-react";
-import { Alert, AlertDescription } from "@/components/ui/alert";
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
-import {
-  Collapsible,
-  CollapsibleContent,
-  CollapsibleTrigger,
-} from "@/components/ui/collapsible";
+import { Card } from "components/ui/card";
+import { Button } from "components/ui/button";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "components/ui/select";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "components/ui/collapsible";
 
 export default function Home() {
   const [isOpen, setIsOpen] = useState(false);
   const [file, setFile] = useState(null);
   const [subtitlePosition, setSubtitlePosition] = useState("bottom");
 
-  const handleFileChange = (e) => {
+  const handleFileChange = (e : any) => {
     if (e.target.files && e.target.files[0]) {
       setFile(e.target.files[0]);
     }
