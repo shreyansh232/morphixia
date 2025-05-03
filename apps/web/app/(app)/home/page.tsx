@@ -171,7 +171,7 @@ export default function Home() {
         {/* Example Captions Section */}
         <div className="mt-16 mb-8">
           <h2 className="text-3xl font-bold text-center mb-8">
-            Example Video Captions
+            Example Video Transformations
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -182,10 +182,10 @@ export default function Home() {
                 </div>
                 <div className="p-4">
                   <h3 className="font-semibold mb-2">
-                    Example Caption Style {item}
+                    Example Video Styles{item}
                   </h3>
                   <p className="text-sm text-gray-500">
-                    Professional captions with{" "}
+                    Professional AI videos with{" "}
                     {item === 1
                       ? "standard style"
                       : item === 2
