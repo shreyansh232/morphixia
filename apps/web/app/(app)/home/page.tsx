@@ -126,15 +126,16 @@ export default function Home() {
 
   return (
     <div className="flex flex-col items-center min-h-screen bg-gray-50 p-4">
-      <div className="w-full max-w-6xl">
+      <div className="w-full max-w-full">
+        <h1 className="text-2xl font-bold mb-8 text-left  border-b border-gray-100 py-3">Morphixia</h1>
         <div className="text-center mb-16">
-          <h1 className="text-6xl font-bold mb-4">AI Video Transformation</h1>
+          <h1 className="text-4xl font-bold mb-4">AI Video Transformation</h1>
           <p className="text-xl text-gray-600">
             Transform your videos with advanced AI models
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
           {/* Left Column - Upload Controls */}
           <Card className="p-6">
             <div className="flex justify-between items-center mb-4">
